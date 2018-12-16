@@ -1,0 +1,245 @@
+
+
+<div class="container" >
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <!--head-small-book-->
+            <div class="container center-block ">
+                <div class="row clearfix page-header-bgcolor" >
+
+                    <div class="col-md-12 column">
+                        <div class="row clearfix" >
+                            <div class="col-md-6 column head-small-left" >
+                                <div class="page-header page-small-header-show">
+                                    <a href="#" class="pull-left">
+                                        <img src="images/Logo_of_SEU_Arch.png" alt='' style="height: 60px"/></a>
+                                    <div class="media-body" style="padding: 0px 10px">
+                                        <h4 class="head-small-cn">数字化古籍书库</h4>
+                                        <p class="head-small-en">Digital Ancient Book Library</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 column head-small-right">
+                                <div class="row clearfix">
+                                    <!--登录-->
+                                    <div class="col-md-12 column right-place" style="height: 34px">
+                                    </div>
+                                    <!--基本-->
+                                    <div class="col-md-12 column right-place">
+                                        <div class="btn-group btn-group-head">
+                                            <!--<div class="col-md-3"></div>-->
+                                            <button class="btn btn-default btn-link" type="button" ng-click="vm.type = '';vm.activeChanged(0)"
+                                                    ui-sref="home">首页</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---->
+
+            <div class="row mt-md-4">
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="book-info-head card-header" style="padding: inherit">
+                            <ul class="nav nav-tabs ">
+                                <li class="active card-header-nav">
+                                    <a onclick="deleteClass('#book-info-tab2'); return false" id="book-info-tab1" href="#home-metadata"
+                                                      data-toggle="tab" class="card-header-a">书籍信息</a></li>
+                                <li class="card-header-nav"><a onclick="deleteClass('#book-info-tab1'); return false" id="book-info-tab2" href="#home-directory"
+                                        data-toggle="tab" class="card-header-a">目录</a></li>
+                            </ul>
+                        </div>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="home-metadata">
+                                    <div class="card-block">
+                                        <table class="table table-sm">
+                                            <tbody>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.title, vm.book.title.length)}}">
+                                                <td> 书名：</td>
+                                                <td><a>{{vm.book.title}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.author, vm.book.author.length)}}">
+                                                <td> 著者：</td>
+                                                <td><a>{{vm.book.author}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.chuban, vm.book.chuban.length)}}">
+                                                <td> 出版：</td>
+                                                <td><a>{{vm.book.chuban}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.chengshushijian, vm.book.chengshushijian.length)}}">
+                                                <td> 成书时间：</td>
+                                                <td><a>{{vm.book.chengshushijian}}</a></td>
+                                            </tr>
+                                            <!--book_allInfo-->
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.juanshu, vm.book.juanshu.length)}} {{vm.infoViewState}}">
+                                                <td> 卷数：</td>
+                                                <td><a>{{vm.book.juanshu}}</a></td>
+                                            </tr>
+
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.leibie, vm.book.leibie.length)}} {{vm.infoViewState}}">
+                                                <td> 类别：</td>
+                                                <td><a>{{vm.book.leibie}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.cangshubanben, vm.book.cangshubanben.length)}} {{vm.infoViewState}}">
+                                                <td> 藏书版本：</td>
+                                                <td><a>{{vm.book.cangshubanben}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.leixing, vm.book.leixing.length)}} {{vm.infoViewState}}">
+                                                <td> 类型：</td>
+                                                <td><a>{{vm.book.leixing}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.chubanshijian, vm.book.chubanshijian.length)}} {{vm.infoViewState}}">
+                                                <td> 出版时间：</td>
+                                                <td><a>{{vm.book.chubanshijian}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.shushucongshu, vm.book.shushucongshu.length)}} {{vm.infoViewState}}">
+                                                <td> 所属丛书：</td>
+                                                <td><a>{{vm.book.shushucongshu}}</a></td>
+                                            </tr>
+
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.chubandidian, vm.book.chubandidian.length)}} {{vm.infoViewState}}">
+                                                <td> 出版地点：</td>
+                                                <td><a>{{vm.book.chubandidian}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.dingzhe, vm.book.dingzhe.length)}} {{vm.infoViewState}}">
+                                                <td> 订、译者：</td>
+                                                <td><a>{{vm.book.dingzhe}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.fenleihao, vm.book.fenleihao.length)}} {{vm.infoViewState}}">
+                                                <td> 分类号：</td>
+                                                <td><a>{{vm.book.fenleihao}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.dengluhao, vm.book.dengluhao.length)}} {{vm.infoViewState}}">
+                                                <td> 登录号：</td>
+                                                <td><a>{{vm.book.dengluhao}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.lurushiijan, vm.book.lurushiijan.length)}} {{vm.infoViewState}}">
+                                                <td>录入时间：</td>
+                                                <td><a>{{vm.book.lurushiijan}}</a></td>
+                                            </tr>
+                                            <!--republic-->
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.zaitixingtai, vm.book.zaitixingtai.length)}} {{vm.infoViewState}}">
+                                                <td> 载体形态：</td>
+                                                <td><a>{{vm.book.zaitixingtai}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.yuyan, vm.book.yuyan.length)}} {{vm.infoViewState}}">
+                                                <td>语言：</td>
+                                                <td><a>{{vm.book.yuyan}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.dengjidanwei1, vm.book.dengjidanwei1.length)}} {{vm.infoViewState}}">
+                                                <td> 登记单位/登记号1：</td>
+                                                <td><a>{{vm.book.dengjidanwei1}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.dengjidanwei2, vm.book.dengjidanwei2.length)}} {{vm.infoViewState}}">
+                                                <td> 登记单位/登记号2：</td>
+                                                <td><a>{{vm.book.dengjidanwei2}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.benshu, vm.book.benshu.length)}} {{vm.infoViewState}}">
+                                                <td>本数：</td>
+                                                <td><a>{{vm.book.benshu}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.xinfenleihao, vm.book.xinfenleihao.length)}} {{vm.infoViewState}}">
+                                                <td>新分类号：</td>
+                                                <td><a>{{vm.book.xinfenleihao}}</a></td>
+                                            </tr>
+                                            <!---->
+                                            <!--characteristic-->
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.tuzhang, vm.book.tuzhang.length)}} {{vm.infoViewState}}">
+                                                <td> 图章：</td>
+                                                <td><a>{{vm.book.tuzhang}}</a></td>
+                                            </tr>
+                                            <!---->
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.tiyao, vm.book.tiyao.length)}} {{vm.infoViewState}}">
+                                                <td>提要：</td>
+                                                <td><a>{{vm.book.tiyao}}</a></td>
+                                            </tr>
+                                            <tr class="{{vm.infoViewStateChanged(vm.book.beizhu, vm.book.beizhu.length)}} {{vm.infoViewState}}">
+                                                <td>备注：</td>
+                                                <td><a>{{vm.book.beizhu}}</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <button  type="button" ng-click="vm.addCollection(vm.userId, vm.book.id)"
+                                             class="btn btn-default btn-book-look" >收藏本书</button>
+                                </div>
+                                <div class="tab-pane" id="home-directory">
+                                    <div  class="card-block">
+                                        <ul ng-repeat="name in vm.book.zhaopianbianhao">
+                                            <div >
+                                                <li>
+                                                    <div><img class="hidden" style="height: 10px" id="{{$index}}" oncontextmenu="return false;"
+                                                              data-original="{{vm.book.zhaopianbianhao[$index]}}"
+                                                              src="{{name}}" alt="{{$index+1}}"></div>
+                                                    <div><a ng-click="vm.view($index)" href="javascript:void(0);">{{$index+1}}</a></div>
+                                                </li>
+
+                                            </div>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        <!--</div>-->
+
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="card text-center">
+                        <div class="card-block">
+                            <div class="row" oncontextmenu="return false">
+                                <div class="row" id="gallery" style="padding-left: 2%; padding-right: 2%">
+                                    <div ng-repeat=" name in vm.book.thumbnailList.slice(vm.pageStart-1, vm.pageEnd)"
+                                         class="col-sm-6 col-md-4" >
+                                        <div style="background-color: #D4D8D1">
+                                            <img class="img-thumbnail" id="{{vm.pageIndexChanged($index, vm.number, vm.size)}}" oncontextmenu="return false;"
+                                                  data-original="{{vm.book.zhaopianbianhao[vm.pageIndexChanged($index, vm.number, vm.size)]}}"
+                                                  src="{{name}}" alt="{{vm.pageIndexChanged($index, vm.number, vm.size)+1}}">
+                                        </div>
+                                        <div>
+                                            <a>{{vm.pageIndexChanged($index, vm.number, vm.size)+1}}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: right" >
+                        <ul uib-pagination ng-change="vm.pageChanged(vm.number, vm.size)"  items-per-page="vm.size" ng-model="vm.number"
+                            total-items="vm.totalItems" max-size="3" previous-text="<" next-text=">" first-text="<<" last-text=">>"
+                            boundary-link-numbers="true" rotate="true" boundary-links="true"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="navbar navbar-default  navbar-foot">
+                <div class="container foot-container">
+                    <div class="col-md-12 column foot-col">
+                        <div class="col-md-5 column foot-col-text-left">
+                            | 版权声明 | 关于我们 | 联系我们 |
+                        </div>
+                        <div class="col-md-7 column foot-col-text-right">
+                            数字化古籍书库版权所有    沪 ICP 备 12345678 号    电话：（021）1234567
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

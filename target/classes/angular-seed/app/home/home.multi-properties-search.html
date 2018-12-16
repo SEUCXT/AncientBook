@@ -1,0 +1,47 @@
+
+<div class="search-block">
+    <form class="form-horizontal">
+        <div class="form-group" style="margin-bottom: 0px; margin-top: 10px">
+            <label class="col-sm-2 control-label" for="author">书名：</label>
+            <div class="col-sm-4">
+                <input ng-model="vm.title" type="text" class="form-control ng-pristine ng-valid ng-empty ng-touched input-multi" id="title" placeholder="">
+            </div>
+            <div class="form-group">
+                <label class="col-sm-1 control-label" for="author">作者：</label>
+                <div class="col-sm-4">
+                    <input ng-model="vm.author" type="text" class="form-control input-multi" id="author" placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 0px">
+            <label class="col-sm-2 control-label" for="chuban">出版社：</label>
+            <div class="col-sm-4">
+                <input ng-model="vm.chuban" type="text" class="form-control input-multi" id="chuban" placeholder="">
+            </div>
+            <div class="form-group">
+                <label class="col-sm-1 control-label" for="author">年代：</label>
+                <div class="col-sm-3">
+                    <input ng-model="vm.author" type="text" class="form-control input-multi" id="niandai" placeholder="">
+                </div>
+                <div class="col-sm-2 btn-multi-place">
+                    <button ng-click="vm.reSearch()" type="submit" class="btn btn-default">检索</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <!--<div class="form-group" style="text-align: center">-->
+        <!--<div class="col-md-8 col-md-offset-4">-->
+            <!--<div class="col-md-6">-->
+                <!--<button ng-click="vm.reSearch()" type="submit" class="btn btn-default">检索</button>-->
+                <!--&lt;!&ndash;<button ng-click="vm.reset()" type="submit" class="btn btn-default">重置</button>&ndash;&gt;-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="col-md-6" style="text-align: right">&ndash;&gt;-->
+            <!--&lt;!&ndash;<button ng-click="vm.activeChanged(0)" type="button" class="btn btn-default btn-link" ui-sref="home">返回</button>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+        <!--</div>-->
+
+    <!--</div>-->
+</div>
+

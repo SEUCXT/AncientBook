@@ -174,6 +174,46 @@ public class UserServiceImpl implements UserService {
         return vo;
     }
 
+    @Override
+    public ViewObject getUserProfileById(Long id) {
+        ViewObject vo = new ViewObject();
+        UserProfile profile = userProfileRepository.findOne(id);
+        if (null == profile) {
+            vo.set(ViewObject.ERROR, 1);
+            vo.set(ViewObject.MESSAGE, "没有该用户！");
+        } else {
+            vo.set(ViewObject.ERROR, 0);
+            vo.set(ViewObject.DATA, profile);
+        }
+        return vo;
+    }
+
+    @Override
+    public ViewObject getUserProfileByUsername(String username) {
+        ViewObject vo = new ViewObject();
+        UserProfile profile = userProfileRepository.findByUsername(username);
+        if (null == profile) {
+            vo.set(ViewObject.ERROR, 1);
+            vo.set(ViewObject.MESSAGE, "没有该用户！");
+        } else {
+            vo.set(ViewObject.ERROR, 0);
+            vo.set(ViewObject.DATA, profile);
+        }
+        return vo;
+    }
+
+
+
+    @Override
+    public ViewObject modifyUserProfile(UserProfile profile) {
+        UserProfile oldProfile = userProfileRepository.findOne(profile.getId());
+        profile.setTime(oldProfile.getTime());
+        userProfileRepository.save(profile);
+        ViewObject vo = new ViewObject();
+        vo.set(ViewObject.ERROR, 0);
+        vo.set(ViewObject.MESSAGE, "用户信息修改成功！");
+        return vo;
+    }
     /**
      * 添加一个用户
      *

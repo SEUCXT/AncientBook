@@ -11,6 +11,12 @@ public interface UserService {
 
     ViewObject login(String username, String password, boolean rememberMe);
 
+    ViewObject getUserProfileById(Long id);
+
+    ViewObject getUserProfileByUsername(String username);
+
+    ViewObject modifyUserProfile(UserProfile profile);
+
     ViewObject setRolesforUser(String username, String roleName);
 
     ViewObject addUser(String username, String password, String roleName);

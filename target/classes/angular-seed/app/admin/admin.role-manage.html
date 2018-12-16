@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h3 class="text-left">
+                角色管理
+            </h3>
+
+            <div class="btn-group">
+                <button class="btn btn-default" type="button" id="modal-roleAddSingle" href="#modal-container-roleAddSingle"
+                        data-toggle="modal" >添加角色</button>
+
+                <div class="modal fade" id="modal-container-roleAddSingle" role="dialog" aria-labelledby="modal-roleAddSingleLabel" aria-hidden="true">
+                    <div class="modal-dialog" >
+                        <div class="modal-content" style="text-align: left">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modal-roleAddSingleLabel">
+                                    添加角色
+                                </h4>
+                                <button type="button" class="close" data-dismiss="modal" ng-click="vm.roleAddClear()"
+                                        aria-hidden="true">×
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <label>Name</label>
+                                <div class="form-group">
+                                    <input type="text" placeholder="username" class="form-control" ng-model="vm.roleNameAdd">
+                                </div>
+                                <label>Display Name</label>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Display Name" class="form-control" ng-model="vm.roleDisplayNameAdd">
+                                </div>
+                                <label>Description</label>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Description" class="form-control" ng-model="vm.roleDescriptionAdd">
+                                </div>
+                                <label>Permissions</label>
+                                <div style="overflow: scroll; height: 150px">
+                                    <div class="checkbox" ng-repeat="permission in vm.allPermissionsData">
+                                        <label><input type="checkbox" id="{{permission.permissionName}}role-add" value="{{permission.permissionName}}"
+                                                      ng-click="vm.addChecked(permission.permissionName+'role-add', vm.rolePermissionsAdd)">{{permission.permissionName}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" ng-click="vm.checkRoleAddInput()" data-dismiss="modal">确定</button>
+                                <button type="button" class="btn " data-dismiss="modal" ng-click="vm.roleAddClear()" >取消</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <table class="table" style="word-break:break-all; word-wrap:break-word;">
+                <thead>
+                <tr>
+                    <!--<th style=" text-align: center">-->
+                        <!--checkbox-->
+                    <!--</th>-->
+                    <th style=" text-align: center">
+                        id
+                    </th>
+                    <th style="text-align: center">
+                        roleName
+                    </th>
+                    <th style="text-align: center">
+                        displayName
+                    </th>
+                    <th style="text-align: center">
+                        description
+                    </th>
+                    <th style="text-align: center">
+                        permissions
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="role in vm.allRolesData">
+                    <!--<td>-->
+                        <!--<label><input type="checkbox" id="{{role.name}}" value="{{role.name}}"-->
+                                      <!--ng-click="vm.addChecked(user.username, vm.usersDeleteIds)"></label>-->
+                    <!--</td>-->
+                    <td>
+                        {{role.id}}
+                    </td>
+                    <td>
+                        {{role.roleName}}
+                    </td>
+                    <td>
+                        {{role.displayName}}
+                    </td>
+                    <td>
+                        {{role.discription}}
+                    </td>
+                    <td>
+                        <ul ng-repeat="permission in role.permissions">
+                            <li>{{permission}}</li>
+                        </ul>
+                        <!--{{role.permissions}}-->
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

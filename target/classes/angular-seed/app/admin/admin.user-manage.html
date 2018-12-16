@@ -1,0 +1,189 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h3 class="text-left">
+                用户管理
+            </h3>
+
+            <div class="btn-group">
+                <button class="btn btn-default" type="button" id="modal-userAddSingle" style="margin-right: 10px"
+                        href="{{vm.verifyPermission('user_add', '#modal-container-userAddSingle')}}"
+                        data-toggle="modal" >单个添加</button>
+                <button class="btn btn-default" type="button" id="modal-userAddMulti"
+                        href="{{vm.verifyPermission('user_add', '#modal-container-userAddMulti')}}"
+                        data-toggle="modal" >批量添加</button>
+                <!--取消删除功能-->
+                <!--<button class="btn btn-default" type="button" ng-click="vm.usersDelete(vm.usersDeleteIds)">删除</button>-->
+                <!------------------------>
+
+
+                <div class="modal fade" id="modal-container-userAddSingle" role="dialog" aria-labelledby="modal-userAddSingleLabel" aria-hidden="true">
+                    <div class="modal-dialog" >
+                        <div class="modal-content" style="text-align: left">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modal-userAddSingleLabel">
+                                    单个添加用户
+                                </h4>
+                                <button type="button" class="close" data-dismiss="modal" ng-click="vm.userAddClear()"
+                                        aria-hidden="true">×
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <label>用户名</label>
+                                <div class="form-group">
+                                    <input type="text" placeholder="username" class="form-control" ng-model="vm.usernameAddRole">
+                                </div>
+                                <label>密码</label>
+                                <div class="form-group">
+                                    <input type="password" placeholder="Password" class="form-control" ng-model="vm.passwordAddRole">
+                                </div>
+                                <label>角色</label>
+                                <div style="overflow: scroll; height: 150px;">
+                                    <div class="checkbox" ng-repeat="role in vm.allRolesData">
+                                        <label><input type="checkbox" id="{{role.roleName}}" value="{{role.roleName}}"
+                                                      ng-click="vm.addChecked(role.roleName, vm.rolenamesAddRole)">{{role.roleName}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" ng-click="vm.checkUserInput()" data-dismiss="modal">确定</button>
+                                <button type="button" class="btn " data-dismiss="modal" ng-click="vm.userAddClear()" >取消</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="modal fade" id="modal-container-userAddMulti" role="dialog" aria-labelledby="modal-container-userAddMulti" aria-hidden="true">
+                    <div class="modal-dialog" >
+                        <div class="modal-content" style="text-align: left">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="modal-userAddMultiLabel">
+                                    批量添加用户
+                                </h4>
+                                <button type="button" class="close" data-dismiss="modal" ng-click="vm.usersAddClear()"
+                                        aria-hidden="true">×
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="input-file">用户文件</label>
+                                    <input type="file" id="input-file"
+                                           accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel">
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" ng-click="vm.usersAdd()" data-dismiss="modal">添加</button>
+                                <button type="button" class="btn " data-dismiss="modal" ng-click="vm.usersAddClear()" >取消</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <table class="table" style="word-break:break-all; word-wrap:break-word;">
+                <thead>
+                <tr>
+                    <!--<th style=" text-align: center">-->
+                        <!--checkbox-->
+                    <!--</th>-->
+                    <th style=" text-align: center">
+                        id
+                    </th>
+                    <th style="text-align: center">
+                        userName
+                    </th>
+                    <th style="text-align: center">
+                        status
+                    </th>
+                    <th style="text-align: center">
+                        roles
+                    </th>
+                    <th style="text-align: center">
+
+                    </th>
+                </tr>
+                </thead>
+                <tbody >
+                <tr ng-repeat="user in vm.users">
+                    <!--<td>-->
+                        <!--<label><input type="checkbox" id="{{user.username}}" value="{{user.username}}"-->
+                        <!--ng-click="vm.addChecked(user.username, vm.usersDeleteIds)"></label>-->
+                    <!--</td>-->
+                    <td>
+                        {{user.id}}
+                    </td>
+                    <td>
+                        {{user.username}}
+                    </td>
+                    <td>
+                        {{user.status}}
+                    </td>
+                    <td>
+                        {{user.roles}}
+                    </td>
+                    <td>
+                        <button class="btn btn-default" type="button" id="modal-roleModify"
+                                href="{{vm.verifyPermission('role_modify', '#modal-container-roleModify')}}"
+                                data-toggle="modal" ng-click="vm.getUserModifyPre(user)">修改</button>
+                    </td>
+
+                    <div class="modal fade" id="modal-container-roleModify" role="dialog" aria-labelledby="modal-roleModifyLabel" aria-hidden="true">
+                        <div class="modal-dialog" >
+                            <div class="modal-content" style="text-align: left">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modal-roleModifyLabel">
+                                        修改用户信息
+                                    </h4>
+                                    <button type="button" class="close" data-dismiss="modal" ng-click="vm.userInfoModifyClear()"
+                                            aria-hidden="true">×
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div>
+                                        <label>用户名：</label>{{vm.userNamePre}}
+                                    </div>
+                                    <label>密码</label>
+                                    <div class="form-group">
+                                        <input type="password" placeholder="Password" class="form-control" ng-model="vm.newPassword">
+                                    </div>
+                                    <label>用户状态</label>
+                                    <div>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optionsRadiosinline" id="open" value="open"
+                                            ng-click="vm.userStatusChange('open')" checked>open
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optionsRadiosinline" id="locked"  value="locked"
+                                                   ng-click="vm.userStatusChange('locked')" checked>locked
+                                        </label>
+                                    </div>
+                                    <label>角色</label>
+                                    <div style="overflow: scroll; height: 150px">
+                                        <div class="checkbox" ng-repeat="role in vm.allRolesData">
+                                            <label><input type="checkbox" id="{{role.roleName}}modify" value="{{role.roleName}}"
+                                                          ng-click="vm.addChecked(role.roleName+'modify', vm.roleModifyRoleName)">{{role.roleName}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" ng-click="vm.userInfoModify()" data-dismiss="modal">确定</button>
+                                    <button type="button" class="btn " data-dismiss="modal" ng-click="vm.userInfoModifyClear()" >取消</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

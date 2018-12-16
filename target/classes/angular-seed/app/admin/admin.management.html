@@ -1,0 +1,93 @@
+<div class="container" style="text-align: center">
+    <div class="row clearfix">
+        <div class="page-header-bgcolor" >
+            <div class="col-md-12 column" style="padding-right: 0px;padding-left: 0px">
+                    <div class="col-md-6 column head-small-left" >
+                        <div class="page-header page-small-header-show">
+                            <a class="pull-left">
+                                <img src="images/Logo_of_SEU_Arch.png" alt='' style="height: 60px"/></a>
+                            <div class="media-body" style="padding: 0px 10px">
+                                <h4 class="head-small-cn">数字化古籍书库后台管理</h4>
+                                <p class="head-small-en">Background Management of Digital Ancient Books Library</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 column head-small-right">
+                        <div class="row clearfix">
+                            <div class="col-md-12 column right-place" style="height: 34px">
+                            </div>
+                            <div class="col-md-12 column right-place">
+                                <div class="btn-group btn-group-head">
+                                    <!--<div class="col-md-3"></div>-->
+                                    <button type="button" class="btn btn-info disabled admin-user-head">您好，{{vm.username}}</button>
+                                    <button class="btn btn-default btn-link" type="button"
+                                            ui-sref="admin">返回登录页</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="tabbable" id="tabs-682047">
+            <div class="col-md-2 column admin-catalog">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="height: 56px">
+                        <h3 class="panel-title" style="font-size: 24px; margin-top: 8px">
+                            目录
+                        </h3>
+                    </div>
+                    <div class="panel-body admin-panel-body">
+                            <div class="btn-group-vertical" style="width: 192px; border-radius: 0">
+                                <button class="btn btn-default admin-catalog-btn" type="button" href="#user-manage" data-toggle="tab" id="user-btn"
+                                        onclick="deleteClass('#role-btn', '#resource-btn','#book-btn'); return false">用户管理</button>
+                                <button class="btn btn-default admin-catalog-btn" type="button" href="#role-manage" data-toggle="tab" id="role-btn"
+                                        onclick="deleteClass('#user-btn', '#resource-btn', '#book-btn'); return false">角色管理</button>
+                                <button class="btn btn-default admin-catalog-btn" type="button" href="#resource-manage" data-toggle="tab" id="resource-btn"
+                                        onclick="deleteClass('#user-btn', '#book-btn', '#role-btn'); return false">资源管理</button>
+                                <button class="btn btn-default admin-catalog-btn" type="button" href="#book-manage" data-toggle="tab" id="book-btn"
+                                        onclick="deleteClass('#user-btn', '#resource-btn', '#role-btn'); return false"
+                                        ng-click="vm.setBookRatioState()">图书管理</button>
+                            </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-10 column admin-content">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="user-manage">
+                        <div ui-view="user-manage"></div>
+                    </div>
+                    <div class="tab-pane" id="role-manage">
+                        <div ui-view="role-manage"></div>
+                    </div>
+                    <div class="tab-pane" id="resource-manage">
+                        <div ui-view="resource-manage"></div>
+                    </div>
+                    <div class="tab-pane" id="book-manage">
+                        <div ui-view="book-manage"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-default  navbar-foot" style="margin-bottom: 0px; margin-top: 10px">
+            <div class="container foot-container">
+                <div class="col-md-12 column foot-col">
+                    <div class="col-md-5 column foot-col-text-left" style="text-align: left">
+                        | 版权声明 | 关于我们 | 联系我们 |
+                    </div>
+                    <div class="col-md-7 column foot-col-text-right">
+                        数字化古籍书库版权所有    沪 ICP 备 12345678 号    电话：（021）1234567
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+</div>

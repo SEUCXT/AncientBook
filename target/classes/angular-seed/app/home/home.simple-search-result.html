@@ -1,0 +1,52 @@
+<div class="container" >
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <div ui-view>
+                <div ui-view="head-small"></div>
+                <div class="container center-block" style="padding-right: 0px; padding-left: 0px">
+                    <div class="row mt-md-4">
+                        <div class="col-md-12">
+                            <div class="card text-center ">
+                                <div class="card-block search-block-home"  >
+                                    <div class="tab-pane active " id="simple-search">
+                                        <div class="col-md-6 col-md-offset-3" style="margin-top: 20px; margin-bottom: 20px; margin-left: 325px">
+                                            <div class="input-group"style="width: 450px">
+                                                <input type="text" ng-model="vm.searchTerm" class="form-control input-simple" placeholder="输入关键字开始检索"
+                                                       style="border-radius: 4px">
+                                                <span class="input-group-btn">
+                                <button ng-click=" vm.reSearch()" class="btn btn-default btn-simple-search" type="button" style="border-radius: 4px">
+                                    <!--<span class="glyphicon glyphicon-search" aria-hidden="true"></span>-->
+                                    简单搜索
+                                </button>
+                                <button ng-click="vm.activeChanged(1)" type="button" class="btn btn-default btn-link"
+                                        ui-sref="home.multi-search-result()">
+                                    高级检索</button>
+                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--<div class="col-md-12" style="background-color: #E8E0CE">-->
+                                <!--<div class="col-md-4"></div>-->
+                                <!--<div class="btn-group center-block">-->
+                                <!--<button class="btn btn-default btn-link" type="button" ng-click="vm.type = ''">所有书籍</button>-->
+                                <!--<button class="btn btn-default btn-link" type="button" ng-click="vm.type = 'republic_book'">馆藏珍本</button>-->
+                                <!--<button class="btn btn-default btn-link" type="button" ng-click="vm.type = 'ancient_book'">线装古籍</button>-->
+                                <!--<button class="btn btn-default btn-link" type="button" ng-click="vm.type = 'characteristic_book'">特色文献</button>-->
+                                <!--</div>-->
+                                <!--</div>-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div ui-view="result"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

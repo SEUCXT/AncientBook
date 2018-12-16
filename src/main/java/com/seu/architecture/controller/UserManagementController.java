@@ -1,10 +1,7 @@
 package com.seu.architecture.controller;
 
 
-import com.seu.architecture.model.Permission;
-import com.seu.architecture.model.Role;
-import com.seu.architecture.model.User;
-import com.seu.architecture.model.ViewObject;
+import com.seu.architecture.model.*;
 import com.seu.architecture.repository.PermissionRepository;
 import com.seu.architecture.repository.RoleRepository;
 import com.seu.architecture.service.IndexingService;
@@ -49,6 +46,22 @@ public class UserManagementController {
 
     @Autowired
     IndexingService indexingService;
+
+    @RequestMapping(value = "/modifyUserProfile", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseEntity<ViewObject> modifyUserProfile(@RequestBody UserProfile userProfile) {
+
+        ViewObject vo = userService.modifyUserProfile(userProfile);
+        return ResponseEntity.ok(vo);
+    }
+
+    @RequestMapping("/getUserProfile")
+    @ResponseBody
+    public ResponseEntity<ViewObject> getUserProfile(@RequestParam("username") String username) {
+
+        ViewObject vo = userService.getUserProfileByUsername(username);
+        return ResponseEntity.ok(vo);
+    }
 
 
     /**

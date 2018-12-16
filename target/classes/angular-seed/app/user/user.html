@@ -1,0 +1,59 @@
+<div ui-view style="background-color: #E8E0CE">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div  class="page-header page-header-show" style="text-align: center">
+                    <img src="images/Logo_of_SEU_Arch_home.png" alt='' style="height: 70px"/>
+                </div>
+                <div class=" home-title">
+                    <h2 class="home-title-cn">
+                        数字化古籍书库个人中心
+                    </h2>
+                    <p class="home-title-en">
+                        User Center of Digital Ancient Books Library
+                    </p>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-6 admin-block">
+                    <div class="input-group">
+                        <h4 style="text-align: center">用户个人中心登录</h4>
+                        <p style="font-weight: bold">用户名: </p>
+                        <input type="text" ng-model="vm.username" class="form-control" placeholder="username" style="margin-bottom: 10px"><br>
+                        <p style="font-weight: bold">密   码: </p>
+                        <input type="password" ng-model="vm.password" class="form-control" placeholder="password"><br>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="vm.remember"> RememberMe?
+                        </label>
+                    </div>
+                    <div class="input-group" style="text-align: center">
+                        <button ng-click="vm.login()" class="btn btn-default" type="button" style="margin-right: 10px">登录</button>
+                        <button ng-click="vm.logout()" class="btn btn-default" type="button" ui-sref="home">退出</button>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-9 column" style="text-align: right">
+                    <button class="btn btn-default btn-link" type="button" ui-sref="home">回到首页</button>
+                </div>
+
+            </div>
+            <nav class="navbar navbar-default  navbar-foot navbar-fixed-bottom">
+                <div class="foot-container">
+                    <div class=" column foot-col">
+                        <div class="col-md-6 column foot-col-text-left">
+                            | 版权声明 | 关于我们 | 联系我们 |
+                        </div>
+                        <div class="col-md-6 column foot-col-text-right">
+                            数字化古籍书库版权所有    沪 ICP 备 12345678 号    电话：（021）1234567
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,87 @@
+<div class="container" style="text-align: center" >
+    <div class="row clearfix">
+        <div class="page-header-bgcolor" >
+            <div class="col-md-12 column" style="padding-right: 0px;padding-left: 0px">
+                <div class="col-md-6 column head-small-left" >
+                    <div class="page-header page-small-header-show">
+                        <a class="pull-left">
+                            <img src="images/Logo_of_SEU_Arch.png" alt='' style="height: 60px"/></a>
+                        <div class="media-body" style="padding: 0px 10px">
+                            <h4 class="head-small-cn">数字化古籍书库后台管理</h4>
+                            <p class="head-small-en">Digital Ancient Book Library</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 column head-small-right">
+                    <div class="row clearfix">
+                        <div class="col-md-12 column right-place" style="height: 34px">
+                        </div>
+                        <div class="col-md-12 column right-place">
+                            <div class="btn-group btn-group-head">
+                                <!--<div class="col-md-3"></div>-->
+                                <button type="button" class="btn btn-info disabled admin-user-head">您好，{{vm.username}},欢迎来到个人中心！</button>
+                                <button class="btn btn-default btn-link" type="button"
+                                        ui-sref="admin">返回登录页</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="tabbable" id="tabs-682047">
+            <div class="col-md-2 column admin-catalog">
+
+                <div class="panel panel-default">
+                    <div class="panel-body admin-panel-body" style="background-color: #E8E0CE">
+                        <div class="btn-group-vertical" style="width: 192px; border-radius: 0">
+                            <button class="btn btn-default admin-catalog-btn" type="button" href="#profile" data-toggle="tab" id="profile-btn"
+                                    onclick="deleteClass('#collection-btn', '#history-btn', '#recommend-btn'); return false">用户资料</button>
+                            <button class="btn btn-default admin-catalog-btn" type="button" href="#collection" data-toggle="tab" id="collection-btn"
+                                    onclick="deleteClass('#profile-btn', '#history-btn', '#recommend-btn'); return false">个人收藏</button>
+                            <button class="btn btn-default admin-catalog-btn" type="button" href="#history" data-toggle="tab" id="history-btn"
+                                    onclick="deleteClass('#profile-btn', '#collection-btn', '#recommend-btn'); return false">浏览历史</button>
+                            <button class="btn btn-default admin-catalog-btn" type="button" href="#recommend" data-toggle="tab" id="recommend-btn"
+                                    onclick="deleteClass('#profile-btn', '#collection-btn', '#history-btn'); return false">猜你喜欢</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-10 column admin-content">
+                <div class="tab-content" style="background-color: #E8E0CE">
+                    <div class="tab-pane active" id="profile">
+                        <div ui-view="profile"></div>
+                    </div>
+                    <div class="tab-pane" id="collection">
+                        <div ui-view="collection"></div>
+                    </div>
+                    <div class="tab-pane" id="history">
+                        <div ui-view="history"></div>
+                    </div>
+                    <div class="tab-pane" id="recommend">
+                        <div ui-view="recommend"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-default  navbar-foot" style="margin-bottom: 0px; margin-top: 10px">
+            <div class="container foot-container">
+                <div class="col-md-12 column foot-col">
+                    <div class="col-md-5 column foot-col-text-left" style="text-align: left">
+                        | 版权声明 | 关于我们 | 联系我们 |
+                    </div>
+                    <div class="col-md-7 column foot-col-text-right">
+                        数字化古籍书库版权所有    沪 ICP 备 12345678 号    电话：（021）1234567
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+</div>

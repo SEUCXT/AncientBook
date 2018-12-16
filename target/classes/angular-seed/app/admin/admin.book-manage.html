@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h3 class="text-left">
+                图书管理
+            </h3>
+            <div style="text-align: left; height: 600px">
+                <ul id="importTab" class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#import-data" data-toggle="tab" id="import-data-btn"
+                           onclick="deleteImportClass('#import-image-btn'); return false">上传图书信息</a>
+                    </li>
+                    <li><a href="#import-image" data-toggle="tab" id="import-image-btn"
+                           onclick="deleteImportClass('#import-data-btn'); return false">上传图书图片</a></li>
+                </ul>
+                <div id="importTabContent" class="tab-content" style="padding: 15px 10px">
+                    <div class="tab-pane fade in active" id="import-data">
+                        <div class="btn-group">
+                            <label>图书类型</label>
+                            <div style="margin-bottom: 15px">
+                                <label class="radio-inline">
+                                    <input type="radio" id="republic_book" value="republic_book" name="book-type-inline"
+                                           ng-click="vm.bookTypeChange('republic_book')" checked>馆藏珍本
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" id="ancient_book"  value="ancient_book" name="book-type-inline"
+                                           ng-click="vm.bookTypeChange('ancient_book')" checked>线装古籍
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" id="characteristic_book"  value="characteristic_book" name="book-type-inline"
+                                           ng-click="vm.bookTypeChange('characteristic_book')" checked>特色文献
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="import-data-file">上传单个文件(.xlsx/.xls)</label>
+                                <input type="file" id="import-data-file" style="margin-bottom: 5px"
+                                       accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel">
+                                <button type="button" class="btn btn-default" ng-click="vm.importData()">上传</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="import-data-compressed-file">上传压缩文件(.zip/.rar)</label>
+                                <input type="file" id="import-data-compressed-file" style="margin-bottom: 5px"
+                                       accept="aplication/zip,aplication/rar">
+                                <button type="button" class="btn btn-default" ng-click="vm.importDataCompressed()">上传</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="import-image">
+                        <button type="button" class="btn btn-default" ng-click="vm.importLocalImage()">上传图片信息</button>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

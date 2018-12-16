@@ -1,0 +1,184 @@
+<div class="container center-block ">
+    <div class="row clearfix page-header-bgcolor" >
+
+        <div class="col-md-12 column">
+            <div class="row clearfix" >
+                <div class="col-md-6 column head-small-left" >
+                    <div class="page-header page-small-header-show">
+                        <a href="#" class="pull-left">
+                            <img src="images/Logo_of_SEU_Arch.png" alt='' style="height: 60px"/></a>
+                        <div class="media-body" style="padding: 0px 10px">
+                            <h4 class="head-small-cn">数字化古籍书库</h4>
+                            <p class="head-small-en">Digital Ancient Books Library</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 column head-small-right">
+                    <div class="row clearfix">
+                        <!--登录-->
+                        <div class="col-md-12 column right-place">
+                            <div class="btn-group btn-group-head-role">
+                                <!--<button id="modal-31843" href="#modal-container-31843" role="button" data-toggle="modal"-->
+                                        <!--class="btn btn-default btn-link" type="button">{{vm.logStateView}}</button>-->
+                                <!--<button id="modal-register" href="#modal-container-register" role="button" data-toggle="modal"-->
+                                        <!--class="btn btn-default btn-link" type="button">注册</button>-->
+                                <!--<button class="btn btn-default btn-link" type="button" ui-sref="admin">管理员</button>-->
+                                <!--<button class="btn btn-default btn-link" type="button" ui-sref="user">个人中心</button>-->
+                                <!--<button class="btn btn-default btn-link" type="button" >管理员</button>-->
+                                <!--登录界面-->
+                                <div class="modal fade" id="modal-container-31843" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" >
+                                        <div class="modal-content" style="text-align: left">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">
+                                                    {{vm.logTitle}}
+                                                </h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">×
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group row">
+                                                    <label for="input-name" class="col-sm-3 col-form-label text-right">用户名:</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="input-name" placeholder="username" ng-model="vm.username">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="input-pwd" class="col-sm-3 col-form-label text-right">密码:</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="input-pwd" placeholder="password" ng-model="vm.password">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" ng-click="vm.logChanged(vm.loginState)">{{vm.logoutStateView}}</button>
+                                                <button type="button" class="btn " data-dismiss="modal" >关闭</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <!--注册界面-->
+                                <div class="modal fade" id="modal-container-register" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" >
+                                        <div class="modal-content" style="text-align: left">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="register-modal">
+                                                  新用户注册
+                                                </h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">×
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group row">
+                                                    <label for="reg-name" class="col-sm-3 col-form-label text-right">用户名:</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="reg-name" placeholder="username" ng-model="vm.name">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="reg-pwd" class="col-sm-3 col-form-label text-right">密码:</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="reg-pwd" placeholder="password" ng-model="vm.pwd">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="reg-phone" class="col-sm-3 col-form-label text-right">手机号:</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="reg-phone" placeholder="phone" ng-model="vm.phone">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label text-right"></label>
+                                                    <div class="col-sm-9">
+                                                        <button  type="button" ng-click="vm.readHistoryBook(his.book.id)"
+                                                                 class="btn btn-default btn-book-look text-right" >发送验证码</button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="reg-verifyCode" class="col-sm-3 col-form-label text-right">验证码:</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="reg-verifyCode" placeholder="verify code" ng-model="vm.code">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="reg-email" class="col-sm-3 col-form-label text-right">邮箱:</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="reg-email" placeholder="email" ng-model="vm.email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label text-right">性别:</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="form-group">
+                                                            <label class="radio-inline">
+                                                                <input type="radio"  value="男" ng-model="vm.gender">男
+                                                            </label>
+                                                            <label class="radio-inline">
+                                                                <input type="radio"  value="女" ng-model="vm.gender">女
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="reg-age" class="col-sm-3 col-form-label text-right">年龄:</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="reg-age" placeholder="age" ng-model="vm.age">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="reg-career" class="col-sm-3 col-form-label text-right">职业:</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="reg-career" placeholder="career" ng-model="vm.career">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" ng-click="vm.register()">注册</button>
+                                                <button type="button" class="btn " data-dismiss="modal" >关闭</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--基本-->
+                        <div class="col-md-12 column right-place">
+                            <div class="btn-group btn-group-head">
+                                <!--<div class="col-md-3"></div>-->
+                                <button class="btn btn-default btn-link" type="button" ng-click="vm.type = '';vm.activeChanged(0)" ui-sref="home">首页</button>
+                                <button class="btn btn-default btn-link  btn-link-home {{vm.btn0Active(vm.type)}}"
+                                        type="button" ng-click="vm.type = ''">所有书籍</button>
+                                <button class="btn btn-default btn-link btn-link-home {{vm.btn1Active(vm.type)}}"
+                                        type="button" ng-click="vm.type = 'republic_book'">馆藏珍本</button>
+                                <button class="btn btn-default btn-link btn-link-home {{vm.btn2Active(vm.type)}}"
+                                        type="button" ng-click="vm.type = 'ancient_book'">线装古籍</button>
+                                <button class="btn btn-default btn-link btn-link-home {{vm.btn3Active(vm.type)}}"
+                                        type="button" ng-click="vm.type = 'characteristic_book'">特色文献</button>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-link btn-link-home dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        用户中心
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <button id="modal-31843" href="#modal-container-31843" role="button" data-toggle="modal"
+                                                class="btn btn-default btn-link" type="button">{{vm.logStateView}}</button>
+                                        <button id="modal-register" href="#modal-container-register" role="button" data-toggle="modal"
+                                                class="btn btn-default btn-link" type="button">用户注册</button>
+                                        <button class="btn btn-default btn-link" type="button" ui-sref="admin">管 理 员</button>
+                                        <button class="btn btn-default btn-link" type="button" ui-sref="user">个人中心</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

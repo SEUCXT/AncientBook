@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 tab-result">
+            <h3 class="text-left" style="color:#1c0b0d ; font-size:30px">
+                个人收藏
+            </h3>
+            <table class="table table-hover table-result">
+                <tbody>
+                <tr ng-repeat="collect in vm.collectionList" class="tab-result-tr">
+                    <td class="td-book-result">
+                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
+                            <img src="{{collect.book.thumbnail}}">
+                        </a>
+                    </td>
+                    <td>
+                        <p class="a-book-title">{{collect.book.title}} {{vm.bookType}}</p>
+                        <p class="p-book-author">作者：{{collect.book.author}}</p>
+                        <p>出版社：{{collect.book.chuban}}</p>
+                        <p>年代：{{collect.book.chubanshijian}}</p>
+                        <p>收藏时间：{{collect.collection.time}}</p>
+                    </td>
+                    <td>
+                        <br/>
+                        <br/>
+                        <button  type="button" ng-click="vm.readCollectionBook(collect.book.id)"
+                                 class="btn btn-default btn-book-look" >查看本书详情</button>
+                        <br/>
+                        <br/>
+                        <button  type="button" ng-click="vm.deleteCollection(vm.userId, collect.collection.id)"
+                                 class="btn btn-default btn-book-look" >移除收藏记录</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

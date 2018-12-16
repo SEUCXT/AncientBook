@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h3 class="text-left" style="color:#1c0b0d ; font-size:30px">
+                用户资料
+            </h3>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td style="vertical-align: middle !important;text-align: center;" width="60">用户名</td>
+                    <td width="60"><input type="text" ng-model="vm.username" class="form-control"></td>
+                    <td style="vertical-align: middle !important;text-align: center;" width="60"></td>
+                    <td style="vertical-align: middle !important;text-align: center;" width="60">邮  箱</td>
+                    <td width="60"><input type="text" ng-model="vm.email" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle !important;text-align: center;">性  别</td>
+                    <td><input type="text" ng-model="vm.gender" class="form-control"></td>
+                    <td style="vertical-align: middle !important;text-align: center;" width="60"></td>
+                    <td style="vertical-align: middle !important;text-align: center;">手  机</td>
+                    <td><input type="text" ng-model="vm.phone" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle !important;text-align: center;">年  龄</td>
+                    <td><input type="text" ng-model="vm.age" class="form-control"></td>
+                    <td style="vertical-align: middle !important;text-align: center;" width="60"></td>
+                    <td style="vertical-align: middle !important;text-align: center;">职  业</td>
+                    <td><input type="text" ng-model="vm.career" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><button  type="button" ng-click="vm.modifyUserProfile()"
+                                 class="btn btn-default">修改用户信息</button></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

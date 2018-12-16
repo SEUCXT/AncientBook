@@ -1,0 +1,158 @@
+<!--<div class="container" >-->
+    <!--<div class="row clearfix">-->
+        <div class="col-md-12 column" style="padding: inherit">
+            <div class="row mt-md-4 clearfix">
+                <div class="col-md-3" role="complementary" style="padding-right: 0px">
+                    <div class="card card-result">
+                        <h5 class="card-header card-header-show">精简结果</h5>
+                        <div class="card-block">
+                            <ul>
+                                <li ng-repeat="facet in vm.refinedAuthorFacets">
+                                    <a href="javascript:void(0);">作者：{{facet}}</a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li ng-repeat="facet in vm.refinedChubanFacets">
+                                    <a href="javascript:void(0);">出版社：{{facet}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-block">
+                            <h6 class="card-subtitle mb-2 text-muted">作者</h6>
+                            <ul>
+                                <li ng-repeat="facet in vm.authorFacets">
+                                    <a ng-click="vm.refineFacetOnAuthor(facet)" href="javascript:void(0);">{{facet.value}}
+                                        <span class="badge badge-default badge-pill">{{facet.valueCount}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-block">
+                            <h6 class="card-subtitle mb-2 text-muted">出版社</h6>
+                            <ul>
+                                <li ng-repeat="facet in vm.chubanFacets">
+                                    <a ng-click="vm.refineFacetOnChuban(facet)" href="javascript:void(0);">{{facet.value}}
+                                        <span class="badge badge-default badge-pill">{{facet.valueCount}}</span> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9" role="main">
+                    <nav class="navbar navbar-default sub-header" role="navigation">
+                        <div >
+                            <p class="navbar-text sub-header-text">检索到{{vm.totalItems}}条结果</p>
+                            <form class="navbar-form navbar-right sub-header-btn">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default dropdown-toggle sub-header-btn-dropdown" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        {{vm.size}}
+                                    </button>
+                                    <ul class="dropdown-menu sub-header-dropdown-menu">
+                                        <li><a ng-click="vm.size = 10">10</a></li>
+                                        <li><a ng-click="vm.size = 20">20</a></li>
+                                        <li><a ng-click="vm.size = 40">40</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default dropdown-toggle sub-header-btn-dropdown" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        {{vm.sortPropertyDescriptions[vm.sortProperty]}}
+                                    </button>
+                                    <ul class="dropdown-menu sub-header-dropdown-menu">
+                                        <li><a ng-click="vm.sortProperty = 'author'">作者</a></li>
+                                        <li><a ng-click="vm.sortProperty = 'title'">标题</a></li>
+                                        <li><a ng-click="vm.sortProperty = 'chuban'">出版社</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default dropdown-toggle sub-header-btn-dropdown" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        {{vm.sortDirectionDescriptions[vm.sortDirection]}}
+                                    </button>
+                                    <ul class="dropdown-menu sub-header-dropdown-menu">
+                                        <li><a ng-click="vm.sortDirection = 'asc'">升序</a></li>
+                                        <li><a ng-click="vm.sortDirection = 'desc'">降序</a></li>
+                                    </ul>
+                                </div>
+                                <button ng-click="vm.search()" type="button" class="btn btn-default">排列</button>
+                            </form>
+                        </div>
+                    </nav>
+                    <div class="col-md-12 tab-result">
+                        <table class="table table-hover table-result">
+                            <tbody>
+                            <tr ng-repeat="book in vm.books" class="tab-result-tr">
+                                <td class="td-book-result">
+                                    <a href="javascript:void(0);" class="thumbnail a-img-book-result">
+                                        <!--<img src="/img/thumbnails/{{book.zhaopianbianhao[0]}}">-->
+                                        <img src="{{book.thumbnail}}">
+                                    </a>
+                                </td>
+                                <td>
+                                    <p class="a-book-title">{{book.title}} {{vm.bookType}}</p>
+                                    <p class="p-book-author">{{book.author}}</p>
+                                    <p>{{book.chuban}}</p>
+                                    <p>{{book.chubanshijian}}</p>
+                                </td>
+                                <td class="td-book-look">
+                                    <button  type="button" data-toggle="modal" href = {{vm.bookReadStateH}}
+                                            ng-click="vm.bookReadJudge('book_read', 'book_allInfo',vm.permissions, book.id)"
+                                            class="btn btn-default btn-book-look" >查看</button>
+                                    <!--提示登录弹出框-->
+                                    <div class="modal" id="no-book-read" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" >
+                                            <div class="modal-content" style="text-align: center">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="myModalLabel">
+                                                        提示
+                                                    </h4>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-hidden="true">×
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h4>权限不足，请先登录！</h4>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+
+                    <div style="text-align: right"  class="{{vm.navViewState}}">
+                        <ul uib-pagination ng-change="vm.pageChanged(vm.number)"  items-per-page="vm.size" ng-model="vm.number" num-pages="vm.totalPages"
+                            total-items="vm.totalItems" max-size="3" previous-text="<" next-text=">" first-text="<<" last-text=">>"
+                            boundary-link-numbers="true" rotate="true" boundary-links="true"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--</div>-->
+<!--</div>-->
+
+<!--foot-->
+<!--<div>-->
+    <!---->
+<!--</div>-->
+<nav class="navbar navbar-default  navbar-foot">
+    <div class="container foot-container">
+        <div class="col-md-12 column foot-col">
+            <div class="col-md-5 column foot-col-text-left">
+                | 版权声明 | 关于我们 | 联系我们 |
+            </div>
+            <div class="col-md-7 column foot-col-text-right">
+                数字化古籍书库版权所有    沪 ICP 备 12345678 号    电话：（021）1234567
+            </div>
+        </div>
+    </div>
+</nav>
+
