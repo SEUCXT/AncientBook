@@ -15,37 +15,49 @@
                 </tr>
                 </thead>
             </table>
-            <table class="table table-bordered">
+            <table class="table table-hover">
                 <tbody>
                 <tr>
-                    <th width="120">
-                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
-                            <img src="{{vm.likeList[0].book.thumbnail}}" height="200" width="170"></a>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[0].book.id)"><a style="font-size:10px; color: #000000">{{vm.likeList[0].book.title}}</a></button><br/>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[0].book.id)"><a style="font-size:10px; color: #000000">{{vm.likeList[0].book.author}}</a></button>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.likeList[0].book.thumbnail}}" class="img-responsive center-block" alt="Cinque Terre" width="120"></a>
+                   </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.likeList[1].book.thumbnail}}" class="img-responsive center-block" alt="Cinque Terre" width="120"></a>
                     </th>
-                    <th width="120">
-                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
-                            <img src="{{vm.likeList[1].book.thumbnail}}" height="200" width="170"></a>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[1].book.id)"><a style="font-size:10px; color: #000000">{{vm.likeList[1].book.title}}</a></button><br/>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[1].book.id)"><a style="font-size:10px; color: #000000">{{vm.likeList[1].book.author}}</a></button>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.likeList[2].book.thumbnail}}" class="img-responsive center-block" alt="Cinque Terre" width="120"></a>
                     </th>
-                    <th width="120">
-                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
-                            <img src="{{vm.likeList[2].book.thumbnail}}" height="200" width="170"></a>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[2].book.id)"><a style="font-size:10px; color: #000000">{{vm.likeList[2].book.title}}</a></button><br/>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[2].book.id)"><a style="font-size:10px; color: #000000">{{vm.likeList[2].book.author}}</a></button>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.likeList[3].book.thumbnail}}" class="img-responsive center-block" alt="Cinque Terre" width="120"></a>
                     </th>
-                    <th width="120">
-                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
-                            <img src="{{vm.likeList[3].book.thumbnail}}" height="200" width="170"></a>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[3].book.id)"><a style="font-size:10px; color: #000000">{{vm.likeList[3].book.title}}</a></button><br/>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[3].book.id)"><a style="font-size:10px; color: #000000">{{vm.likeList[3].book.author}}</a></button>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.likeList[4].book.thumbnail}}" class="img-responsive center-block" alt="Cinque Terre" width="120"></a>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[0].book.id)"><a style="font-size:14px; color: #000000">{{vm.likeList[0].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[0].book.id)"><a style="font-size:14px; color: #000000">{{vm.likeList[0].book.author}}</a></button>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[1].book.id)"><a style="font-size:14px; color: #000000">{{vm.likeList[1].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[1].book.id)"><a style="font-size:14px; color: #000000">{{vm.likeList[1].book.author}}</a></button>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[2].book.id)"><a style="font-size:14px; color: #000000">{{vm.likeList[2].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[2].book.id)"><a style="font-size:14px; color: #000000">{{vm.likeList[2].book.author}}</a></button>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[3].book.id)"><a style="font-size:14px; color: #000000">{{vm.likeList[3].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[3].book.id)"><a style="font-size:14px; color: #000000">{{vm.likeList[3].book.author}}</a></button>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[4].book.id)"><a style="font-size:14px; color: #000000">{{vm.likeList[4].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.likeList[4].book.id)"><a style="font-size:14px; color: #000000">{{vm.likeList[4].book.author}}</a></button>
                     </th>
                 </tr>
                 </tbody>
             </table>
-            <br/>
             <br/>
             <br/>
             <table class="table table-striped">
@@ -61,43 +73,51 @@
                 </tr>
                 </thead>
             </table>
-            <table class="table table-bordered">
+            <table class="table table-hover">
                 <tbody>
                 <tr>
-                    <th width="120">
-                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
-                        <img src="{{vm.popularList[0].book.thumbnail}}" height="200" width="170"></a>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[0].book.id)"><a style="font-size:10px; color: #000000">{{vm.popularList[0].book.title}}</a></button><br/>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[0].book.id)"><a style="font-size:10px; color: #000000">{{vm.popularList[0].book.author}}</a></button>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.popularList[0].book.thumbnail}}" class="img-responsive center-block" width="120"></a>
                     </th>
-                    <th width="120">
-                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
-                            <img src="{{vm.popularList[1].book.thumbnail}}" height="200" width="170"></a>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[1].book.id)"><a style="font-size:10px; color: #000000">{{vm.popularList[1].book.title}}</a></button><br/>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[1].book.id)"><a style="font-size:10px; color: #000000">{{vm.popularList[1].book.author}}</a></button>
-
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.popularList[1].book.thumbnail}}" class="img-responsive center-block" width="120"></a>
                     </th>
-                    <th width="120">
-                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
-                            <img src="{{vm.popularList[2].book.thumbnail}}" height="200" width="170"></a>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[2].book.id)"><a style="font-size:10px; color: #000000">{{vm.popularList[2].book.title}}</a></button><br/>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[2].book.id)"><a style="font-size:10px; color: #000000">{{vm.popularList[2].book.author}}</a></button>
-
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.popularList[2].book.thumbnail}}" class="img-responsive center-block" width="120"></a>
                     </th>
-                    <th width="120">
-                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
-                            <img src="{{vm.popularList[3].book.thumbnail}}" height="200" width="170"></a>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[3].book.id)"><a style="font-size:10px; color: #000000">{{vm.popularList[3].book.title}}</a></button><br/>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[3].book.id)"><a style="font-size:10px; color: #000000">{{vm.popularList[3].book.author}}</a></button>
-
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.popularList[3].book.thumbnail}}" class="img-responsive center-block" width="120"></a>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.popularList[4].book.thumbnail}}" class="img-responsive center-block" width="120"></a>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[0].book.id)"><a style="font-size:14px; color: #000000">{{vm.popularList[0].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[0].book.id)"><a style="font-size:14px; color: #000000">{{vm.popularList[0].book.author}}</a></button>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[1].book.id)"><a style="font-size:14px; color: #000000">{{vm.popularList[1].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[1].book.id)"><a style="font-size:14px; color: #000000">{{vm.popularList[1].book.author}}</a></button>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[2].book.id)"><a style="font-size:14px; color: #000000">{{vm.popularList[2].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[2].book.id)"><a style="font-size:14px; color: #000000">{{vm.popularList[2].book.author}}</a></button>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[3].book.id)"><a style="font-size:14px; color: #000000">{{vm.popularList[3].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[3].book.id)"><a style="font-size:14px; color: #000000">{{vm.popularList[3].book.author}}</a></button>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[4].book.id)"><a style="font-size:14px; color: #000000">{{vm.popularList[4].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.popularList[4].book.id)"><a style="font-size:14px; color: #000000">{{vm.popularList[4].book.author}}</a></button>
                     </th>
                 </tr>
                 </tbody>
             </table>
             <br/>
             <br/>
-            <br/>
-
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -111,35 +131,45 @@
                 </tr>
                 </thead>
             </table>
-            <table class="table table-bordered">
+            <table class="table table-hover">
                 <tbody>
                 <tr>
-                    <th width="120">
-                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
-                            <img src="{{vm.newBookList[0].book.thumbnail}}" height="200" width="170"></a>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[0].book.id)"><a style="font-size:10px; color: #000000">{{vm.newBookList[0].book.title}}</a></button><br/>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[0].book.id)"><a style="font-size:10px; color: #000000">{{vm.newBookList[0].book.author}}</a></button>
-
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.newBookList[0].book.thumbnail}}" class="img-responsive center-block"  width="120"></a>
                     </th>
-                    <th width="120">
-                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
-                            <img src="{{vm.newBookList[1].book.thumbnail}}" height="200" width="170"></a>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[1].book.id)"><a style="font-size:10px; color: #000000">{{vm.newBookList[1].book.title}}</a></button><br/>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[1].book.id)"><a style="font-size:10px; color: #000000">{{vm.newBookList[1].book.author}}</a></button>
-
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.newBookList[1].book.thumbnail}}" class="img-responsive center-block"  width="120"></a>
                     </th>
-                    <th width="120">
-                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
-                            <img src="{{vm.newBookList[2].book.thumbnail}}" height="200" width="170"></a>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[2].book.id)"><a style="font-size:10px; color: #000000">{{vm.newBookList[2].book.title}}</a></button><br/>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[2].book.id)"><a style="font-size:10px; color: #000000">{{vm.newBookList[2].book.author}}</a></button>
-
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.newBookList[2].book.thumbnail}}" class="img-responsive center-block"  width="120"></a>
                     </th>
-                    <th width="120">
-                        <a href="javascript:void(0);" class="thumbnail a-img-book-result">
-                            <img src="{{vm.newBookList[3].book.thumbnail}}" height="200" width="170"></a>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[3].book.id)"><a style="font-size:10px; color: #000000">{{vm.newBookList[3].book.title}}</a></button><br/>
-                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[3].book.id)"><a style="font-size:10px; color: #000000">{{vm.newBookList[3].book.author}}</a></button>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.newBookList[3].book.thumbnail}}" class="img-responsive center-block"  width="120"></a>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;" width="120">
+                        <img src="{{vm.newBookList[4].book.thumbnail}}" class="img-responsive center-block" width="120"></a>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[0].book.id)"><a style="font-size:14px; color: #000000">{{vm.newBookList[0].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[0].book.id)"><a style="font-size:14px; color: #000000">{{vm.newBookList[0].book.author}}</a></button>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[1].book.id)"><a style="font-size:14px; color: #000000">{{vm.newBookList[1].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[1].book.id)"><a style="font-size:14px; color: #000000">{{vm.newBookList[1].book.author}}</a></button>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[2].book.id)"><a style="font-size:14px; color: #000000">{{vm.newBookList[2].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[2].book.id)"><a style="font-size:14px; color: #000000">{{vm.newBookList[2].book.author}}</a></button>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[3].book.id)"><a style="font-size:14px; color: #000000">{{vm.newBookList[3].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[3].book.id)"><a style="font-size:14px; color: #000000">{{vm.newBookList[3].book.author}}</a></button>
+                    </th>
+                    <th scope="row" style="vertical-align: middle !important;text-align: center;">
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[4].book.id)"><a style="font-size:14px; color: #000000">{{vm.newBookList[4].book.title}}</a></button><br/>
+                        <button class="btn btn-link" type="button" ng-click="vm.readRecommendBook(vm.newBookList[4].book.id)"><a style="font-size:14px; color: #000000">{{vm.newBookList[4].book.author}}</a></button>
                     </th>
                 </tr>
                 </tbody>

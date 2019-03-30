@@ -19,15 +19,15 @@ angular.module('myApp.user', [])
         vm.email = "";
 
         vm.pNum = 1
-        vm.pSize = 4;
+        vm.pSize = 5;
         vm.popularList = [];
 
         vm.lNum = 1
-        vm.lSize = 4;
+        vm.lSize = 5;
         vm.likeList = [];
 
         vm.nNum = 1
-        vm.nSize = 4;
+        vm.nSize = 5;
         vm.newBookList = [];
 
         vm.login = login;

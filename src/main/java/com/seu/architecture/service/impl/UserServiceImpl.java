@@ -405,24 +405,33 @@ public class UserServiceImpl implements UserService {
 
         Iterable<User> users = userRepository.findAll();
         Iterator<User> it = users.iterator();
-        List<JSONObject> userList = new ArrayList<>();
+        List<UserManagementResponse> userList = new ArrayList<>();
 
         while (it.hasNext()) {
+            UserManagementResponse response = new UserManagementResponse();
             User current = it.next();
-            String username = current.getUsername();
             Long id = current.getId();
-            Set<String> roles = new HashSet<>();
-            Set<String> permissions = new HashSet<>();
-            String status = current.getStatus();
-            for (Role role : current.getRoles()) {
-                roles.add(role.getName());
-                for (Permission permission : role.getPermissions()) {
-                    permissions.add(permission.getName());
-                }
+            UserProfile profile = userProfileRepository.findOne(id);
+            Set<Role> roles = current.getRoles();
+            String userRole = "";
+            for (Role role : roles) {
+                userRole = role.getDisplayName();
+                break;
             }
-            JsonObject js = new JsonObject();
-            JSONObject jsonObject = js.createUserJSONObject(id, username, roles, permissions, status);
-            userList.add(jsonObject);
+            response.setId(current.getId());
+            response.setUsername(current.getUsername());
+            response.setStatus(current.getStatus());
+            response.setUserRole(userRole);
+            if (null != profile ) {
+                response.setGender(profile.getGender());
+                response.setAge(profile.getAge());
+                response.setTime(profile.getTime());
+                response.setCareer(profile.getCareer());
+                response.setEmail(profile.getEmail());
+                response.setPhone(profile.getPhone());
+            }
+
+            userList.add(response);
         }
         vo.set(ViewObject.ERROR, 0)
                 .set(ViewObject.DATA, userList);

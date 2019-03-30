@@ -31,15 +31,15 @@ public class ShiroConfig {
      * 主要是AuthorizingRealm类的子类，以及EhCacheManager类。
      */
     @Bean(name = "lifecycleBeanPostProcessor")
-    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor(){
+    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
         return new LifecycleBeanPostProcessor();
     }
 
 
-    //    /**
-//     * EhCacheManager，缓存管理，用户登陆成功后，把用户信息和权限信息缓存起来，
-//     * 然后每次用户请求时，放入用户的session中，如果不设置这个bean，每个请求都会查询一次数据库。
-//     */
+    /**
+     * EhCacheManager，缓存管理，用户登陆成功后，把用户信息和权限信息缓存起来，
+     * 然后每次用户请求时，放入用户的session中，如果不设置这个bean，每个请求都会查询一次数据库。
+     */
     @Bean(name = "ehCacheManager")
     @DependsOn("lifecycleBeanPostProcessor")
     public EhCacheManager ehCacheManager() {
@@ -51,7 +51,6 @@ public class ShiroConfig {
      * 防止密码在数据库里明码保存，当然在登陆认证的时候，
      * 这个类也负责对form里输入的密码进行编码。
      */
-
 //    @Bean(name="hashedCredentialsMatcher")
 //    public HashedCredentialsMatcher hashedCredentialsMatcher(){
 //        HashedCredentialsMatcher credentialsMatcher = new HashedCredentialsMatcher();
@@ -67,7 +66,7 @@ public class ShiroConfig {
      */
     @Bean(name = "shiroRealm")
     @DependsOn("lifecycleBeanPostProcessor")
-    public ShiroRealm shiroRealm(){
+    public ShiroRealm shiroRealm() {
         ShiroRealm realm = new ShiroRealm();
         return realm;
     }
@@ -77,7 +76,7 @@ public class ShiroConfig {
      * //
      */
     @Bean(name = "securityManager")
-    public DefaultWebSecurityManager securityManager(){
+    public DefaultWebSecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(shiroRealm());
         securityManager.setCacheManager(ehCacheManager());
@@ -87,7 +86,6 @@ public class ShiroConfig {
     @Bean(name = "shiroFilterFactoryBean")
     public ShiroFilterFactoryBean shiroFilterFactoryBean() {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
-
         shiroFilterFactoryBean.setSecurityManager(securityManager());
 
         Map<String, Filter> filters = new LinkedHashMap<>();
@@ -97,10 +95,10 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setFilters(filters);
 
         Map<String, String> filterChainDefinitionManager = new LinkedHashMap<>();
-        //filterChainDefinitionManager.put("/logout", "logout");
-        filterChainDefinitionManager.put("/login","anon");      //anon它对应的过滤器里面是空的,什么都没做
+        filterChainDefinitionManager.put("/logout", "logout");
+        filterChainDefinitionManager.put("/login", "anon");      //anon它对应的过滤器里面是空的,什么都没做
         filterChainDefinitionManager.put("/register", "anon");
-       // filterChainDefinitionManager.put("/ancientBook/simpleSearch", "authc, roles[primary_user]"); //authc表示需要授权才可以进行操作
+        // filterChainDefinitionManager.put("/ancientBook/simpleSearch", "authc, roles[primary_user]"); //authc表示需要授权才可以进行操作
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionManager);
 
